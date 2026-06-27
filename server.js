@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 80;
+const PORT = process.env.PORT || 80;
 const BACKEND_URL = 'http://localhost:8080';
 const FRONTEND_DIST = path.join(__dirname, 'frontend', 'dist');
 
