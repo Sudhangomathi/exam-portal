@@ -26,6 +26,7 @@ public class DataSeeder {
                 admin.setUsername("admin");
                 admin.setPassword("admin123");
                 admin.setRole("ADMIN");
+                admin.setEmail("admin@examportal.com");
                 userRepository.save(admin);
 
                 User user = new User();
@@ -33,6 +34,7 @@ public class DataSeeder {
                 user.setPassword("user123");
                 user.setRole("USER");
                 user.setCourse("Computer Science and Engineering");
+                user.setEmail("user@examportal.com");
                 userRepository.save(user);
 
                 // Seed some additional student users for analytics
@@ -140,6 +142,7 @@ public class DataSeeder {
         student.setPassword(password);
         student.setRole("USER");
         student.setCourse(course);
+        student.setEmail(username + "@gmail.com");
         userRepository.save(student);
     }
 }
