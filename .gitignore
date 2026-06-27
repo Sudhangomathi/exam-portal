@@ -1,0 +1,18 @@
+# Maven
+**/target/
+*.class
+
+# Node / Vite
+**/node_modules/
+**/dist/
+dist-ssr/
+*.local
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
