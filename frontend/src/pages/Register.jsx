@@ -34,6 +34,9 @@ function Register() {
       setOtpMessage(response.data.message);
       if (response.data.simulated && response.data.otp) {
         setSimulatedOtp(response.data.otp);
+        alert(`Verification OTP Generated!\n\nFor testing, your OTP code is: ${response.data.otp}\n\nPlease click OK and enter this code in the OTP field.`);
+      } else {
+        alert(response.data.message);
       }
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {
