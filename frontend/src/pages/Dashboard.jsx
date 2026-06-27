@@ -30,7 +30,7 @@ function Dashboard({ user }) {
       }
     };
     fetchDashboardData();
-  }, []);
+  }, [user, navigate]);
 
   if (loading) return <div style={{ textAlign: 'center', marginTop: '100px', fontSize: '1.2rem', fontWeight: 'bold' }}>Loading Portal Dashboard...</div>;
 

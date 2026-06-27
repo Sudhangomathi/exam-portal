@@ -21,6 +21,8 @@ function Home({ user }) {
     fetchBranches();
   }, []);
 
+  if (loading) return <div style={{ textAlign: 'center', marginTop: '100px', fontSize: '1.2rem', fontWeight: 'bold' }}>Loading...</div>;
+
   const totalBranchesCount = branches.length || 6;
   const totalUniqueExams = branches.length ? new Set(
     branches.flatMap(b => (b.exams || []).map(e => e.name))

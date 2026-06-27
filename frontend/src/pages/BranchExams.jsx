@@ -44,7 +44,7 @@ function BranchExams({ user }) {
       }
     };
     fetchBranch();
-  }, [id]);
+  }, [id, navigate, user?.role]);
 
   if (loading) return <div style={{ textAlign: 'center', marginTop: '50px' }}>Loading...</div>;
   if (!branch) return <div style={{ textAlign: 'center', marginTop: '50px' }}>Branch not found.</div>;

@@ -1,24 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Login({ onLogin }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(() => location.state?.username || '');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(() => location.state?.message || '');
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (location.state && location.state.message) {
-      setSuccessMessage(location.state.message);
-      if (location.state.username) {
-        setUsername(location.state.username);
-      }
-    }
-  }, [location.state]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

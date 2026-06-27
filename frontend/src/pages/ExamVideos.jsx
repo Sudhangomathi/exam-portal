@@ -196,7 +196,7 @@ function ExamVideos({ user }) {
       }
     };
     fetchDetails();
-  }, [branchId, examId]);
+  }, [branchId, examId, navigate, user?.role]);
 
   if (loading) return <div style={{ textAlign: 'center', marginTop: '100px', fontSize: '1.2rem', fontWeight: 'bold' }}>Loading Prep Folder...</div>;
   if (!exam) return <div style={{ textAlign: 'center', marginTop: '100px' }}>Exam details not found.</div>;
